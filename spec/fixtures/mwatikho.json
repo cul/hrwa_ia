@@ -1,0 +1,376 @@
+{
+  "pageParams": {
+    "pageSize": 100,
+    "q": "mwatikho",
+    "search": "",
+    "fc": [],
+    "rootEntityDef": "Collection",
+    "rootEntityValue": "1068",
+    "falpha": [
+      {
+        "name": "f_websiteGroup",
+        "value": "true"
+      }
+    ],
+    "flimit": [],
+    "foffset": [],
+    "queryType": "",
+    "autocompConstraint": "collId=1068",
+    "sortDesc": false,
+    "homePage": false,
+    "all": "",
+    "page": 1
+  },
+  "advancedSearchForm": {
+    "years": [
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009,
+      2010,
+      2011,
+      2012,
+      2013,
+      2014,
+      2015,
+      2016,
+      2017,
+      2018
+    ],
+    "months": [
+      {
+        "index": 1,
+        "name": "January"
+      },
+      {
+        "index": 2,
+        "name": "February"
+      },
+      {
+        "index": 3,
+        "name": "March"
+      },
+      {
+        "index": 4,
+        "name": "April"
+      },
+      {
+        "index": 5,
+        "name": "May"
+      },
+      {
+        "index": 6,
+        "name": "June"
+      },
+      {
+        "index": 7,
+        "name": "July"
+      },
+      {
+        "index": 8,
+        "name": "August"
+      },
+      {
+        "index": 9,
+        "name": "September"
+      },
+      {
+        "index": 10,
+        "name": "October"
+      },
+      {
+        "index": 11,
+        "name": "November"
+      },
+      {
+        "index": 12,
+        "name": "December"
+      }
+    ],
+    "q": "mwatikho"
+  },
+  "sortFields": [
+    "score.desc",
+    "f_sort_title.asc",
+    "f_sort_title.desc",
+    "f_url.asc",
+    "f_url.desc"
+  ],
+  "results": {
+    "waybackUrl": "https://wayback.archive-it.org",
+    "totalResultCount": 1,
+    "waybackAccessPoint": "1068",
+    "breadcrumbs": [
+      {
+        "name": "Explore",
+        "path": "/explore"
+      },
+      {
+        "name": "Columbia University Libraries",
+        "path": "/organizations/304"
+      },
+      {
+        "name": "Human Rights",
+        "path": "/collections/1068"
+      }
+    ],
+    "rootEntity": {
+      "featuredTitle": "Columbia University Human Rights Web Archive",
+      "featuredDescription": "This collection is dedicated to preserving web-based information of importance to the global community of human rights researchers, students, policymakers and advocates.",
+      "metadata": {
+        "meta_oai_Subject": [
+          "Human rights",
+          "Non-governmental organizations",
+          "Human rights workers",
+          "National human rights institutions",
+          "Web archives"
+        ],
+        "meta_Subject": [
+          "societyAndCulture",
+          "Human rights",
+          "Non-governmental organizations",
+          "Human rights workers",
+          "National human rights institutions",
+          "Web archives"
+        ],
+        "meta_Title": [
+          "Human Rights"
+        ],
+        "meta_Creator": [
+          "Columbia University. Center for Human Rights Documentation and Research"
+        ],
+        "meta_Description": [
+          "An initiative of CUL's Center for Human Rights Documentation and Research, the Human Rights Web Archive is an effort to preserve and ensure access to freely available human rights resources created mainly by non-governmental organizations, national human rights institutions, and individuals."
+        ],
+        "meta_Collector": [
+          "Columbia University Libraries, Center for Human Rights Documentation and Research"
+        ]
+      },
+      "entityDef": "Collection",
+      "organizationName": "Columbia University Libraries",
+      "featuredLink": "https://archive-it.org/public/collection.html?id=1068",
+      "collectionId": 1068,
+      "entityPath": "/collections/1068",
+      "organizationId": 304,
+      "uid": "C-1068",
+      "descriptions": [
+        "An initiative of CUL's Center for Human Rights Documentation and Research, the Human Rights Web Archive is an effort to preserve and ensure access to freely available human rights resources created mainly by non-governmental organizations, national human rights institutions, and individuals."
+      ],
+      "created_dt": 1210875015000,
+      "collectionPath": "/collections/1068",
+      "organizationPath": "/organizations/304",
+      "typeKey": "collection",
+      "imageEntity": "featured",
+      "description": "An initiative of CUL's Center for Human Rights Documentation and Research, the Human Rights Web Archive is an effort to preserve and ensure access to freely available human rights resources created mainly by non-governmental organizations, national human rights institutions, and individuals.",
+      "name": "Human Rights",
+      "id": 1068
+    },
+    "activeTab": {
+      "active": true,
+      "numResults": 1,
+      "entityDef": "CuratedPage",
+      "url": "?q=mwatikho&show=Sites",
+      "name": "Sites",
+      "type": "Sites"
+    },
+    "searchedFacets": [
+      {
+        "hasMore": false,
+        "toggleAlphaURL": "?q=mwatikho&falpha=f_websiteGroup%3Afalse",
+        "numResults": 1,
+        "results": [
+          {
+            "count": 1,
+            "constrained": false,
+            "addFacetURL": "?q=mwatikho&fc=websiteGroup%3ANon-governmental+organizations",
+            "name": "Non-governmental organizations"
+          }
+        ],
+        "alpha": true,
+        "id": "websiteGroup"
+      },
+      {
+        "hasMore": false,
+        "toggleAlphaURL": "?q=mwatikho&falpha=f_meta_Subject%3Atrue",
+        "numResults": 2,
+        "results": [
+          {
+            "count": 1,
+            "constrained": false,
+            "addFacetURL": "?q=mwatikho&fc=meta_Subject%3AHuman+rights",
+            "name": "Human rights"
+          },
+          {
+            "count": 1,
+            "constrained": false,
+            "addFacetURL": "?q=mwatikho&fc=meta_Subject%3ATorture+victims",
+            "name": "Torture victims"
+          }
+        ],
+        "alpha": false,
+        "id": "meta_Subject"
+      },
+      {
+        "hasMore": false,
+        "toggleAlphaURL": "?q=mwatikho&falpha=f_meta_Creator%3Atrue",
+        "numResults": 1,
+        "results": [
+          {
+            "count": 1,
+            "constrained": false,
+            "addFacetURL": "?q=mwatikho&fc=meta_Creator%3AMwatikho+Torture+Survivors+Organization",
+            "name": "Mwatikho Torture Survivors Organization"
+          }
+        ],
+        "alpha": false,
+        "id": "meta_Creator"
+      },
+      {
+        "hasMore": false,
+        "toggleAlphaURL": "?q=mwatikho&falpha=f_meta_Language%3Atrue",
+        "numResults": 1,
+        "results": [
+          {
+            "count": 1,
+            "constrained": false,
+            "addFacetURL": "?q=mwatikho&fc=meta_Language%3AEnglish",
+            "name": "English"
+          }
+        ],
+        "alpha": false,
+        "id": "meta_Language"
+      },
+      {
+        "hasMore": false,
+        "toggleAlphaURL": "?q=mwatikho&falpha=f_meta_Coverage%3Atrue",
+        "numResults": 1,
+        "results": [
+          {
+            "count": 1,
+            "constrained": false,
+            "addFacetURL": "?q=mwatikho&fc=meta_Coverage%3AKenya",
+            "name": "Kenya"
+          }
+        ],
+        "alpha": false,
+        "id": "meta_Coverage"
+      },
+      {
+        "hasMore": false,
+        "toggleAlphaURL": "?q=mwatikho&falpha=f_meta_Collector%3Atrue",
+        "numResults": 1,
+        "results": [
+          {
+            "count": 1,
+            "constrained": false,
+            "addFacetURL": "?q=mwatikho&fc=meta_Collector%3AColumbia+University+Libraries%2C+Center+for+Human+Rights+Documentation+and+Research",
+            "name": "Columbia University Libraries, Center for Human Rights Documentation and Research"
+          }
+        ],
+        "alpha": false,
+        "id": "meta_Collector"
+      }
+    ],
+    "sortingBaseUrl": "?q=mwatikho&totalResultCount=1",
+    "tabs": [
+      {
+        "active": true,
+        "numResults": 1,
+        "entityDef": "CuratedPage",
+        "url": "?q=mwatikho&show=Sites",
+        "name": "Sites",
+        "type": "Sites"
+      },
+      {
+        "active": false,
+        "numResults": 0,
+        "entityDef": "ArchivedPage",
+        "url": "?q=mwatikho&show=ArchivedPages",
+        "name": "ArchivedPages",
+        "type": "ArchivedPages"
+      }
+    ],
+    "errorStatus": "",
+    "success": true,
+    "displayed": 1,
+    "numPages": 1,
+    "rootEntityType": "collection",
+    "pagingBaseUrl": "?q=mwatikho",
+    "resultsUrl": "?q=mwatikho",
+    "constrainedFacets": [],
+    "sort": "score.desc",
+    "entities": [
+      {
+        "isSeed": true,
+        "numVideos": 3,
+        "seedVideosUrl": "?q=http%3A%2F%2Fwww.mahteso.org%2F&show=SeedVideos&fc=seedId%3A1159185",
+        "collectionName": "Human Rights",
+        "allURL": "https://wayback.archive-it.org/1068/*/http://www.mahteso.org/",
+        "metadata": {
+          "meta_Language": [
+            "English"
+          ],
+          "meta_Subject": [
+            "Torture victims",
+            "Human rights"
+          ],
+          "meta_Title": [
+            "Mwatikho $high%Torture/$light% Survivors Organization",
+            "MATESO"
+          ],
+          "meta_Creator": [
+            "$high%Mwatikho/$light% Torture Survivors Organization"
+          ],
+          "meta_Collector": [
+            "Columbia University Libraries, Center for Human Rights Documentation and Research"
+          ],
+          "meta_Coverage": [
+            "Kenya"
+          ],
+          "meta_Description": [
+            "$high%Mwatikho/$light% is a community based human rights organization of torture survivors and their families. It advocates: the elimination of torture; the identification and recruiting of other torture survivors; networking with other organizations against torture; rehabilitation of the survivors through counseling ; advocacy for reparation and economic emancipation of the survivors; and monitoring and documentation of torture. It was established in 1992 as a membership and transformed to a human rights lobbying group."
+          ]
+        },
+        "entityDef": "CuratedPage",
+        "organizationName": "Columbia University Libraries",
+        "websiteGroup": "Non-governmental organizations",
+        "canonicalUrl": "http://www.mahteso.org/",
+        "numCaptures": 0,
+        "waybackCalendar": "https://wayback.archive-it.org/1068/*/http://www.mahteso.org/",
+        "waybackAccessPoint": "1068",
+        "firstCapture": {
+          "formattedDate": "Jan 01, 1900",
+          "waybackUrl": "https://wayback.archive-it.org/1068/19000101000000/http://www.mahteso.org/",
+          "date": -2208988800000
+        },
+        "lastCapture": {
+          "formattedDate": "Jan 01, 1900",
+          "waybackUrl": "https://wayback.archive-it.org/1068/19000101000000/http://www.mahteso.org/",
+          "date": -2208988800000
+        },
+        "collectionId": 1068,
+        "entityPath": "/curated/1159185",
+        "organizationId": 304,
+        "uid": "S-1159185",
+        "descriptions": [
+          "$high%Mwatikho/$light% is a community based human rights organization of torture survivors and their families. It advocates: the elimination of torture; the identification and recruiting of other torture survivors; networking with other organizations against torture; rehabilitation of the survivors through counseling ; advocacy for reparation and economic emancipation of the survivors; and monitoring and documentation of torture. It was established in 1992 as a membership and transformed to a human rights lobbying group."
+        ],
+        "created_dt": 1474658675000,
+        "collectionPath": "/collections/1068",
+        "organizationPath": "/organizations/304",
+        "url": "http://www.mahteso.org/",
+        "hilitedUrl": "http://www.mahteso.org/",
+        "typeKey": "curatedpage",
+        "description": "$high%Mwatikho/$light% is a community based human rights organization of torture survivors and their families. It advocates: the elimination of torture; the identification and recruiting of other torture survivors; networking with other organizations against torture; rehabilitation of the survivors through counseling ; advocacy for reparation and economic emancipation of the survivors; and monitoring and documentation of torture. It was established in 1992 as a membership and transformed to a human rights lobbying group.",
+        "name": "$high%Mwatikho/$light% Torture Survivors Organization",
+        "id": 1159185
+      }
+    ]
+  }
+}
