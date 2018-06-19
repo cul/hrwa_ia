@@ -1,28 +1,27 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A blacklight front-end for Internet Archive collections
 
-Things you may want to cover:
+In CatalogController, set 
 
-* Ruby version
+    config.repository_class = InternetArchive::Repository
+    config.response_model = InternetArchive::BlacklightResponse
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+For index search results metadata display, include the following:
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+    config.add_index_field 'meta_Title', label: 'Title'
+    config.add_index_field 'linked_url', label: 'URL'
+    config.add_index_field 'description', label: 'Description'
+    config.add_index_field 'linked_numCaptures', label: '# of Captures'
+    config.add_index_field 'linked_firstCapture_date', label: 'First Captured'
+    config.add_index_field 'linked_lastCapture_date', label: 'Last Captured'    
+    config.add_index_field 'linked_numVideos', label: 'Videos'
+    config.add_index_field 'meta_Subject', label: 'Subject'
+    config.add_index_field 'websiteGroup', label: 'Group'
+    config.add_index_field 'meta_Creator', label: 'Creator'
+    config.add_index_field 'meta_Language', label: 'Language'
+    config.add_index_field 'meta_Coverage', label: 'Coverage'
+    config.add_index_field 'meta_Collector', label: 'Collector'
+
+
