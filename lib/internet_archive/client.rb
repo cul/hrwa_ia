@@ -22,7 +22,7 @@ module InternetArchive
 
     #
     def execute request_context
-      uri = URI(URI.encode(request_context[:params][:uri]))
+      uri = URI(request_context[:params][:uri])
 
       res = Net::HTTP.get_response(uri)
       if res.is_a?(Net::HTTPSuccess)
@@ -48,8 +48,20 @@ module InternetArchive
 
       query_opts = {}
       query_opts['q'] = opts['q']
-      #To do: remove RSolr dependency
-      query = RSolr::Uri.params_to_solr(query_opts)
+      facet_string = ""
+      if(opts['f'])
+        opts['f'].each do |k, v|
+          v.each_with_index do |fv, index|
+            facet_string = "#{facet_string}fc=#{k}%3A#{fv}&"
+          end
+        end
+      end
+
+      facet_string = facet_string.gsub(' ', '+').chomp('&')
+      query = query_opts.to_query
+      if(facet_string)
+        query = "#{query}&#{facet_string}"
+      end
       opts[:query] = query
       opts[:uri] = path.to_s + (query ? "?#{query}" : "")
 
