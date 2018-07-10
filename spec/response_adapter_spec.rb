@@ -60,6 +60,13 @@ describe InternetArchive::ResponseAdapter do
       expect(arr[0]).to eq(url)
     end
 
+    it 'should track page number and size' do
+      response = response_adapter.adapt_response(ia_json)
+      expect(response["response"]["numFound"]).to eq(1)
+      expect(response["response"]["page"]).to eq(1)
+      expect(response["response"]["rows"]).to eq(100)
+    end
+
 
   end
 

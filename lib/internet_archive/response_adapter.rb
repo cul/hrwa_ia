@@ -22,6 +22,8 @@ module InternetArchive
       response_docs.merge!('facet_counts' => { 'facet_queries'=>{},
                                                'facet_fields' => reformat_facets(res_data_json),'facet_dates'=>{} })
       response_docs["response"]["numFound"] = res_data_json['results']['totalResultCount']
+      response_docs["response"]["page"] = res_data_json['pageParams']['page']
+      response_docs["response"]["rows"] = res_data_json['pageParams']['pageSize']
       return response_docs
     end
 

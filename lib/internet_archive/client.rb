@@ -29,7 +29,7 @@ module InternetArchive
         res_data = res.read_body
         return if res_data.nil? || res_data.empty?
         res_data_mod = InternetArchive::ResponseAdapter.adapt_response(res_data)
-        bl = InternetArchive::HashWithResponse.new(request_context,  res, res_data_mod)
+        bl = InternetArchive::HashWithResponse.new(request_context, res, res_data_mod)
       end
 
     end
@@ -45,8 +45,23 @@ module InternetArchive
       raise "path must be a string or symbol, not #{path.inspect}" unless [String,Symbol].include?(path.class)
       path = path.to_s
       opts[:path] = path
-
       query_opts = {}
+      query_opts['pageSize'] = '10'
+      if opts['rows']
+        query_opts['pageSize'] = opts['rows']
+      else
+        query_opts['rows'] = '10'
+      end
+      if opts['page']
+        query_opts['page'] = opts['page']
+      else
+        query_opts['page'] = '1'
+      end
+      if query_opts['page'].to_i < 2
+        opts[:start] = 0
+      else
+        opts[:start] = ((query_opts['page'].to_i - 1) * query_opts['pageSize'].to_i)
+      end
       query_opts['q'] = opts['q']
       facet_string = ""
       if(opts['f'])
