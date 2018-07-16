@@ -15,6 +15,7 @@ describe InternetArchive::Client do
       expect(client).to receive(:execute).with(hash_including(request_options)).and_return(:status => 200)
       client.execute request_options
     end
+
   end
 
 
@@ -22,10 +23,10 @@ describe InternetArchive::Client do
 
     let(:path) { connection_options[:url] }
     let(:opts) { {'q' => 'torture', 'f' => { "meta_Subject"=>["Human rights", "Torture"]} }  }
-    let(:opts_qstring) { "https://archive-it.org/collections/1068?q=torture&fc=meta_Subject%3AHuman+rights&fc=meta_Subject%3ATorture" }
+    let(:opts_qstring) { "https://archive-it.org/collections/1068?page=1&pageSize=10&q=torture&fc=meta_Subject%3AHuman%20rights&fc=meta_Subject%3ATorture" }
     let(:multi_facet_opts) { {'q' => 'torture', "f"=>{"meta_Language"=>["English"], 
             "meta_Subject"=>["Human rights", "Torture"]} } }
-    let(:multi_facet_opts_qstring) { "https://archive-it.org/collections/1068?q=torture&fc=meta_Language%3AEnglish&fc=meta_Subject%3AHuman+rights&fc=meta_Subject%3ATorture" }
+    let(:multi_facet_opts_qstring) { "https://archive-it.org/collections/1068?page=1&pageSize=10&q=torture&fc=meta_Language%3AEnglish&fc=meta_Subject%3AHuman%20rights&fc=meta_Subject%3ATorture" }
     let (:request) { client.build_request(path, opts) }
     let (:request_multifacet) { client.build_request(path, multi_facet_opts) }
 
@@ -49,6 +50,7 @@ describe InternetArchive::Client do
     it 'should construct a multiple facet query string' do
       expect(request_multifacet[:params][:uri]).to eq(multi_facet_opts_qstring)
     end
+
 
 
   end

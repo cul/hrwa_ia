@@ -15,7 +15,7 @@ module InternetArchive::Response
       docs = PaginatedDocSet.new(self["response"]["docs"])
       docs.per_page = request[:params]["rows"]
       docs.page_start = request[:params]["start"]
-      docs.page_total = self["response"]["numFound"].to_s.to_i
+      docs.total = self["response"]["numFound"].to_s.to_i
       self["response"]["docs"] = docs
     end
   end
@@ -27,11 +27,12 @@ module InternetArchive::Response
       if defined?(ActiveSupport::HashWithIndifferentAccess)
         InternetArchive.const_set("HashWithIndifferentAccessWithResponse", Class.new(ActiveSupport::HashWithIndifferentAccess))
         InternetArchive::HashWithIndifferentAccessWithResponse.class_eval <<-eos
-          include InternetArchive::Response
-          def initialize(request, response, result)
-            super()
-            initialize_response(request, response, result)
-          end
+        include InternetArchive::Response
+
+        def initialize(request, response, result)
+          super()
+          initialize_response(request, response, result)
+        end
         eos
         ::InternetArchive::HashWithIndifferentAccessWithResponse.new(request, response, self)
       else
@@ -84,4 +85,3 @@ module InternetArchive::Response
   end
 
 end
-

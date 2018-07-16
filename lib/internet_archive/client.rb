@@ -22,7 +22,8 @@ module InternetArchive
 
     #
     def execute request_context
-      uri = URI(request_context[:params][:uri])
+      uri_string = request_context[:params][:uri]
+      uri = URI.parse(uri_string)
 
       res = Net::HTTP.get_response(uri)
       if res.is_a?(Net::HTTPSuccess)
@@ -50,7 +51,7 @@ module InternetArchive
       if opts['rows']
         query_opts['pageSize'] = opts['rows']
       else
-        query_opts['rows'] = '10'
+        query_opts['pageSize'] = '10'
       end
       if opts['page']
         query_opts['page'] = opts['page']
@@ -62,12 +63,18 @@ module InternetArchive
       else
         opts[:start] = ((query_opts['page'].to_i - 1) * query_opts['pageSize'].to_i)
       end
-      query_opts['q'] = opts['q']
+
+      query_opts['q'] = ""
+      if(opts['q'])
+        query_opts['q'] = URI.escape(opts['q'])
+      end
+
       facet_string = ""
       if(opts['f'])
         opts['f'].each do |k, v|
           v.each_with_index do |fv, index|
-            facet_string = "#{facet_string}fc=#{k}%3A#{fv}&"
+            fval = URI.escape(fv)
+            facet_string = "#{facet_string}fc=#{k}%3A#{fval}&"
           end
         end
       end
@@ -86,6 +93,7 @@ module InternetArchive
 
       request_opts = { :params => opts }
     end
+
 
   end
 end
