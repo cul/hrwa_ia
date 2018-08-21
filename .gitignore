@@ -1,0 +1,11 @@
+/.bundle/
+/Gemfile.lock
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+*.gem
+.ruby-version
+.ruby-gemset
+
+# rspec failure tracking

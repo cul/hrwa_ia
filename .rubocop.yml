@@ -1,0 +1,25 @@
+require: rubocop-rspec
+
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+  - "blacklight_internet_archive.gemspec"
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/LineLength:
+  Max: 200
+
+Style/StringLiterals:
+  Enabled: false
+
+Layout/IndentationConsistency:
+  EnforcedStyle: normal
+
+Rails/OutputSafety:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
