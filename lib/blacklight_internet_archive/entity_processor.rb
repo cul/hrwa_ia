@@ -61,14 +61,9 @@ module BlacklightInternetArchive
     end
 
     def self.set_linked_fields(e_clone, base_url)
-      puts e_clone['allURL']
       @linkable_fields.each do |l, l_url|
         val = e_clone[l]
-        puts 'mk'
-        puts l
         val_url = e_clone[l_url]
-        puts val_url
-        puts 'mk'
         if val_url.start_with?('?')
           val_url = "#{base_url}#{val_url}"
         end
