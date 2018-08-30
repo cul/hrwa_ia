@@ -18,7 +18,6 @@ module BlacklightInternetArchive
         next unless entity['isSeed']
         entities_clone[entities.index(entity)] = reformat_entity(entity, response_json['results']['searchedFacets'], base_url)
       end
-      puts entities_clone.class
       entities_clone
     end
 
@@ -51,10 +50,8 @@ module BlacklightInternetArchive
         next unless ent == d
         new_key = "#{d}_date"
         next unless entval['formattedDate']
-        formatted_date = entval['formattedDate']
-        date_url = entval['waybackUrl']
-        date_link = make_link(formatted_date, date_url)
-        e_clone[new_key] = formatted_date
+        date_link = make_link(entval['formattedDate'], entval['waybackUrl'])
+        e_clone[new_key] = entval['formattedDate']
         e_clone["linked_#{new_key}"] = date_link.html_safe
       end
       e_clone
@@ -64,9 +61,7 @@ module BlacklightInternetArchive
       @linkable_fields.each do |l, l_url|
         val = e_clone[l]
         val_url = e_clone[l_url]
-        if val_url.start_with?('?')
-          val_url = "#{base_url}#{val_url}"
-        end
+        val_url = "#{base_url}#{val_url}" if val_url.start_with?('?')
         linked_val = make_link(val, val_url)
         e_clone["linked_#{l}"] = linked_val
       end

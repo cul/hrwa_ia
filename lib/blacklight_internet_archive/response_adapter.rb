@@ -5,16 +5,7 @@ module BlacklightInternetArchive
     def self.adapt_response(response_body, base_url)
       response_body_string = convert_highlighting(response_body.to_s)
       res_data_json = JSON.parse(response_body_string)
-
-      entities = res_data_json['results']['entities']
-      # processed_entities = process_entities(entities, res_data_json['results']['searchedFacets'], base_url)
-      # response_docs = { 'response' => { 'docs' => processed_entities } }
-
-      # response_docs = EntityProcessor.run(res_data_json, base_url)
       response_docs = { 'response' => { 'docs' => EntityProcessor.run(res_data_json, base_url) } }
-
-
-
       response_docs.merge!('facet_counts' => { 'facet_queries' => {},
                                                'facet_fields' => reformat_facets(res_data_json), 'facet_dates' => {} })
       set_paging_stats(response_docs, res_data_json)
@@ -27,14 +18,12 @@ module BlacklightInternetArchive
       response_string
     end
 
-
     def self.set_paging_stats(response_docs, res_data_json)
       response_docs['response']['numFound'] = res_data_json['results']['totalResultCount']
       response_docs['response']['page'] = res_data_json['pageParams']['page']
       response_docs['response']['rows'] = res_data_json['pageParams']['pageSize']
       response_docs
     end
-
 
     def self.reformat_facets(response_json)
       facets_hash = {}
@@ -54,6 +43,5 @@ module BlacklightInternetArchive
       end
       new_item_arr
     end
-
   end
 end

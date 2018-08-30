@@ -1,7 +1,6 @@
 require "blacklight_internet_archive/version"
 
 module BlacklightInternetArchive
-
   autoload :InternetArchive, 'blacklight_internet_archive/internet_archive'
   autoload :Client, 'blacklight_internet_archive/client'
   autoload :Repository, 'blacklight_internet_archive/repository'
@@ -18,6 +17,4 @@ module BlacklightInternetArchive
 
     Client.new connection, opts
   end
-
-
 end

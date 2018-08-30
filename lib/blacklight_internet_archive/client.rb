@@ -3,7 +3,6 @@
 require 'net/http'
 require 'active_support/core_ext/hash'
 
-
 module BlacklightInternetArchive
   class Client
     def initialize(connection_url, options = {})
@@ -26,12 +25,11 @@ module BlacklightInternetArchive
       uri = URI.parse(uri_string)
 
       res = Net::HTTP.get_response(uri)
-      if res.is_a?(Net::HTTPSuccess)
-        res_data = res.read_body
-        return if res_data.nil? || res_data.empty?
-        res_data_mod = BlacklightInternetArchive::ResponseAdapter.adapt_response(res_data, @connection_url)
-        BlacklightInternetArchive::HashWithResponse.new(request_context, res, res_data_mod)
-      end
+      return unless res.is_a?(Net::HTTPSuccess)
+      res_data = res.read_body
+      return if res_data.nil? || res_data.empty?
+      res_data_mod = BlacklightInternetArchive::ResponseAdapter.adapt_response(res_data, @connection_url)
+      BlacklightInternetArchive::HashWithResponse.new(request_context, res, res_data_mod)
     end
 
     # +build_request+ accepts a path and options hash
@@ -43,30 +41,37 @@ module BlacklightInternetArchive
 
     def build_request(path, opts)
       raise "path must be a string or symbol, not #{path.inspect}" unless [String, Symbol].include?(path.class)
-      path = "#{path}.json"
+      opts[:path] = "#{path}.json"
+      query_opts = construct_query_options(opts)
+      opts[:start] = calculate_start(query_opts)
+      facet_string = construct_facet_string(opts)
+      query = query_opts.to_query
+      query = "#{query}&#{facet_string}" if facet_string
+      opts[:query] = query
+      opts[:uri] = opts[:path].to_s + (query ? "?#{query}" : '')
+      { params: opts }
+    end
 
-      opts[:path] = path
+    def construct_query_options(opts)
       query_opts = {}
       query_opts['pageSize'] = '10'
-      if opts['rows']
-        query_opts['pageSize'] = opts['rows']
-      else
-        query_opts['pageSize'] = '10'
-      end
-      if opts['page']
-        query_opts['page'] = opts['page']
-      else
-        query_opts['page'] = '1'
-      end
-      if query_opts['page'].to_i < 2
-        opts[:start] = 0
-      else
-        opts[:start] = ((query_opts['page'].to_i - 1) * query_opts['pageSize'].to_i)
-      end
-
+      query_opts['pageSize'] = opts['rows'] if opts['rows']
+      query_opts['page'] = '1'
+      query_opts['page'] = opts['page'] if opts['page']
       query_opts['q'] = ''
       query_opts['q'] = CGI.escape(opts['q']) if opts['q']
+      query_opts
+    end
 
+    def calculate_start(query_opts)
+      start = 0
+      if query_opts['page'].to_i >= 2
+        start = ((query_opts['page'].to_i - 1) * query_opts['pageSize'].to_i)
+      end
+      start
+    end
+
+    def construct_facet_string(opts)
       facet_string = ''
       if opts['f']
         opts['f'].each do |k, v|
@@ -76,19 +81,7 @@ module BlacklightInternetArchive
           end
         end
       end
-
       facet_string = facet_string.tr(' ', '+').chomp('&')
-      query = query_opts.to_query
-      query = "#{query}&#{facet_string}" if facet_string
-
-      opts[:query] = query
-      opts[:uri] = path.to_s + (query ? "?#{query}" : '')
-
-      opts[:rows] = 10 if opts[:rows].nil?
-
-      opts[:start] = 0 if opts[:start].nil?
-
-      { :params => opts }
     end
   end
 end

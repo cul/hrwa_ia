@@ -1,9 +1,11 @@
 # make response blacklight-ready
-class BlacklightInternetArchive::HashWithResponse < Hash
-  include BlacklightInternetArchive::Response
+module BlacklightInternetArchive
+  class HashWithResponse < Hash
+    include BlacklightInternetArchive::Response
 
-  def initialize(request, response, result)
-    super()
-    initialize_response(request, response, result || {})
+    def initialize(request, response, result)
+      super()
+      initialize_response(request, response, result || {})
+    end
   end
 end
