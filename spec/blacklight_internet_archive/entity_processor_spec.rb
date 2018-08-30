@@ -11,8 +11,8 @@ describe BlacklightInternetArchive::EntityProcessor do
     let(:base_url) { '' }
     let(:response_json) { JSON.parse(File.read("spec/fixtures/mwatikho.json")) }
 
-    it 'returns a hash' do
-      expect(described_class.run(response_json, base_url)).to be_a Hash
+    it 'returns an array' do
+      expect(described_class.run(response_json, base_url)).to be_an Array
     end
 
     it 'raises error if entities are not present' do
@@ -34,6 +34,32 @@ describe BlacklightInternetArchive::EntityProcessor do
 
     it 'constructs linked date field' do
       expect(described_class.set_date_fields(@entity, date_field, entity_value)[date_key]).to eq(url)
+    end
+  end
+
+  describe '.link_faceted_results_data' do
+    let(:metadata_field) { 'websiteGroup' }
+    let(:metadata_val) { ['Non-governmental organizations'] }
+    let(:searched_facets) {
+      [
+        { 'numResults' => 1, 'results' => [{ 'count' => 1, 'addFacetURL' => 'q=mwatikho&fc=meta_Coverage%3AKenya&fc=websiteGroup%3ANon-governmental+organizations', 'constrained' => false, 'name' => 'Non-governmental organizations' }], 'hasMore' => false, 'toggleAlphaURL' => '?q=mwatikho&fc=meta_Coverage%3AKenya&falpha=f_websiteGroup%3Afalse', 'alpha' => true, 'id' => 'websiteGroup' }
+      ]
+    }
+    let(:f_pattern) { 'q=mwatikho&f[meta_Coverage][]=Kenya&f[websiteGroup][]=Non-governmental organizations' }
+
+
+    it 'should track already selected facets with each request' do
+      arr = described_class.link_faceted_results_data(metadata_field, metadata_val, searched_facets)
+      expect(arr[0]).to include(f_pattern)
+    end
+  end
+
+  describe '.convert_ia_facet_url' do
+    let(:input_string) { 'q=world&fc=meta_Creator%3AMarkaz+%CA%BBAmm%C4%81n+li-Dir%C4%81s%C4%81t+%E1%B8%A4uq%C5%ABq+al-Ins%C4%81n&fc=meta_Subject%3AHuman+rights+advocacy&fc=websiteGroup%3ANon-governmental+organizations' }
+    let(:output_string) { '?q=world&f[meta_Creator][]=Markaz ʻAmmān li-Dirāsāt Ḥuqūq al-Insān&f[meta_Subject][]=Human rights advocacy&f[websiteGroup][]=Non-governmental organizations' }
+
+    it 'should convert ia facet url to blacklight format ' do
+      expect(described_class.convert_ia_facet_url(input_string)).to eq(output_string)
     end
   end
 end
