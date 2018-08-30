@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'net/http'
+require 'active_support/core_ext/hash'
+
 
 module BlacklightInternetArchive
   class Client
