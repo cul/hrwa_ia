@@ -49,6 +49,7 @@ module BlacklightInternetArchive
       query = "#{query}&#{facet_string}" if facet_string
       opts[:query] = query
       opts[:uri] = opts[:path].to_s + (query ? "?#{query}" : '')
+      opts[:rows] = 10 if opts[:rows].nil?
       { params: opts }
     end
 
