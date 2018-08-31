@@ -1,5 +1,5 @@
 module BlacklightInternetArchive
-  class Response
+  module Response
     def self.included(base)
       unless base < Hash
         raise ArgumentError, "InternetArchive::Response expects to included only in (sub)classes of Hash; got included in '#{base}' instead."

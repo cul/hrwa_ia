@@ -38,6 +38,8 @@ module BlacklightInternetArchive
     #   :uri
     #   :path
     #   :query
+    #   :rows and :start
+
 
     def build_request(path, opts)
       raise "path must be a string or symbol, not #{path.inspect}" unless [String, Symbol].include?(path.class)

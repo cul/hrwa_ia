@@ -34,5 +34,4 @@ describe BlacklightInternetArchive::ResponseAdapter do
       expect { Integer(result['response']['numFound']) }.not_to raise_error
     end
   end
-
 end

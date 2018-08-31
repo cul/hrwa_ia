@@ -47,8 +47,7 @@ describe BlacklightInternetArchive::EntityProcessor do
     }
     let(:f_pattern) { 'q=mwatikho&f[meta_Coverage][]=Kenya&f[websiteGroup][]=Non-governmental organizations' }
 
-
-    it 'should track already selected facets with each request' do
+    it 'tracks already selected facets with each request' do
       arr = described_class.link_faceted_results_data(metadata_field, metadata_val, searched_facets)
       expect(arr[0]).to include(f_pattern)
     end
@@ -58,7 +57,7 @@ describe BlacklightInternetArchive::EntityProcessor do
     let(:input_string) { 'q=world&fc=meta_Creator%3AMarkaz+%CA%BBAmm%C4%81n+li-Dir%C4%81s%C4%81t+%E1%B8%A4uq%C5%ABq+al-Ins%C4%81n&fc=meta_Subject%3AHuman+rights+advocacy&fc=websiteGroup%3ANon-governmental+organizations' }
     let(:output_string) { '?q=world&f[meta_Creator][]=Markaz ʻAmmān li-Dirāsāt Ḥuqūq al-Insān&f[meta_Subject][]=Human rights advocacy&f[websiteGroup][]=Non-governmental organizations' }
 
-    it 'should convert ia facet url to blacklight format ' do
+    it 'converts ia facet url to blacklight format ' do
       expect(described_class.convert_ia_facet_url(input_string)).to eq(output_string)
     end
   end
