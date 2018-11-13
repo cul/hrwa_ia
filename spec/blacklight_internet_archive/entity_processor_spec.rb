@@ -7,6 +7,12 @@ describe BlacklightInternetArchive::EntityProcessor do
     @entity = described_class.reformat_entity(@entity_json['results']['entities'][0], @entity_json['results']['searchedFacets'], 'base_url')
   end
 
+  describe '.get_processor' do
+    object = described_class.get_processor('Sites')
+    expect(object).to be_a SitesEntityProcessor
+  end
+
+
   describe '.run' do
     let(:base_url) { '' }
     let(:response_json) { JSON.parse(File.read("spec/fixtures/mwatikho.json")) }

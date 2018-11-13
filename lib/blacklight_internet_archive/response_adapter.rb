@@ -1,11 +1,15 @@
 require 'json'
+require_relative 'sites_entity_processor'
 
 module BlacklightInternetArchive
+
   class ResponseAdapter
-    def self.adapt_response(response_body, base_url)
+
+    def self.adapt_response(response_body, base_url, search_type)
       response_body_string = convert_highlighting(response_body.to_s)
       res_data_json = JSON.parse(response_body_string)
-      response_docs = { 'response' => { 'docs' => EntityProcessor.run(res_data_json, base_url) } }
+      processor = EntityProcessor.get_processor(search_type)
+      response_docs = { 'response' => { 'docs' => processor.run(res_data_json, base_url) } }
       response_docs.merge!('facet_counts' => { 'facet_queries' => {},
                                                'facet_fields' => reformat_facets(res_data_json), 'facet_dates' => {} })
       set_paging_stats(response_docs, res_data_json)
