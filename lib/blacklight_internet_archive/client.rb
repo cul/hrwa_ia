@@ -23,12 +23,13 @@ module BlacklightInternetArchive
     def execute(request_context)
       uri_string = request_context[:params][:uri]
       uri = URI.parse(uri_string)
+      search_type = request_context[:params][:controller]
 
       res = Net::HTTP.get_response(uri)
       return unless res.is_a?(Net::HTTPSuccess)
       res_data = res.read_body
       return if res_data.nil? || res_data.empty?
-      res_data_mod = BlacklightInternetArchive::ResponseAdapter.adapt_response(res_data, @connection_url)
+      res_data_mod = BlacklightInternetArchive::ResponseAdapter.adapt_response(res_data, @connection_url, search_type)
       BlacklightInternetArchive::HashWithResponse.new(request_context, res, res_data_mod)
     end
 
