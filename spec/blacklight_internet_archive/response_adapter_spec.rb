@@ -1,3 +1,5 @@
+require_relative '../../lib/blacklight_internet_archive/response_adapter'
+
 describe BlacklightInternetArchive::ResponseAdapter do
   describe '.adapt_response' do
     let(:ia_json) { File.read("spec/fixtures/mwatikho.json") }

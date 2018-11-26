@@ -1,3 +1,5 @@
+require_relative '../../lib/blacklight_internet_archive/client'
+
 describe BlacklightInternetArchive::Client do
   let(:connection_options) { { url: 'https://archive-it.org/collections/1068', read_timeout: 42, open_timeout: 43, update_format: :xml } }
   let(:client) do

@@ -1,4 +1,5 @@
 require 'json'
+require_relative '../../lib/blacklight_internet_archive/entity_processor'
 
 describe BlacklightInternetArchive::EntityProcessor do
   before(:all) do

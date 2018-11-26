@@ -1,3 +1,6 @@
+require_relative '../../lib/blacklight_internet_archive/repository'
+
+
 describe BlacklightInternetArchive::Repository do
   let(:blacklight_config) { { url: 'localhost' } }
 
