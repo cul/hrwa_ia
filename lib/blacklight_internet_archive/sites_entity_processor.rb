@@ -8,13 +8,11 @@ module BlacklightInternetArchive
   class SitesEntityProcessor < EntityProcessor
 
     @metadata_fields
-    @date_fields
     @linkable_fields
 
     def initialize
 
       @metadata_fields = %w[meta_Creator meta_Coverage meta_Subject meta_Language meta_Collector meta_Title]
-      @date_fields = %w[firstCapture lastCapture]
       @linkable_fields = {  'meta_Title' => 'allURL', 'url' => 'allURL', 'numCaptures' => 'allURL',
                             'numVideos' => 'seedVideosUrl' }
     end
@@ -39,11 +37,13 @@ module BlacklightInternetArchive
         if entity_key == 'metadata'
           entity_clone = facet_link_metadata(entity_val, entity_clone, searched_facets)
         end
-        entity_clone = set_date_fields(entity_clone, entity_key, entity_val)
         entity_clone = set_linked_fields(entity_clone, base_url)
       end
-      # this field is not under the metadata node and not handled by process_entities
+      # these fields are not under the metadata node and not handled by process_entities
       entity_clone['linked_websiteGroup'] = link_faceted_results_data('websiteGroup', [entity['websiteGroup']], searched_facets)
+      val_url = entity_clone['allURL']
+      val_url = "#{base_url}#{val_url}" if val_url.start_with?('?')
+      entity_clone['linked_Captures'] = linked_val = make_link('View Site Captures on Wayback.org', val_url)
       entity_clone
     end
 
@@ -55,18 +55,6 @@ module BlacklightInternetArchive
         end
       end
       ent_clone
-    end
-
-    def set_date_fields(e_clone, ent, entval)
-      @date_fields.each do |d|
-        next unless ent == d
-        new_key = "#{d}_date"
-        next unless entval['formattedDate']
-        date_link = make_link(entval['formattedDate'], entval['waybackUrl'])
-        e_clone[new_key] = entval['formattedDate']
-        e_clone["linked_#{new_key}"] = date_link.html_safe
-      end
-      e_clone
     end
 
     def set_linked_fields(e_clone, base_url)
@@ -138,9 +126,6 @@ module BlacklightInternetArchive
     def make_link(value, url)
       "<a href=\"#{url}\">#{value}</a>".html_safe
     end
-
-
-
 
   end
 end
