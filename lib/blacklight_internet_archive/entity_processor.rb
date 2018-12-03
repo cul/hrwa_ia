@@ -8,9 +8,9 @@ module BlacklightInternetArchive
 
   	def self.get_processor(search_type = 'catalog')
   		if search_type == 'search_pages'
-  			return ArchivedPagesEntityProcessor.new
+  			# return ArchivedPagesEntityProcessor.new
   		elsif search_type == 'search_videos'
-        return SeedVideosEntityProcessor.new
+        # return SeedVideosEntityProcessor.new
       else 
         return SitesEntityProcessor.new
       end
