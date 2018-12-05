@@ -1,7 +1,11 @@
 {
   "pageParams": {
-    "q": "http://www.mahteso.org/",
+    "pageSize": 100,
+    "q": "mwatikho",
+    "search": "",
+    "fc": [],
     "rootEntityDef": "Collection",
+    "rootEntityValue": "1068",
     "falpha": [
       {
         "name": "f_websiteGroup",
@@ -11,19 +15,9 @@
     "flimit": [],
     "foffset": [],
     "queryType": "",
-    "fc": [
-      {
-        "name": "seedId",
-        "value": "1159185"
-      }
-    ],
-    "pageSize": 100,
-    "search": "",
-    "show": "Sites",
-    "rootEntityValue": "1068",
-    "homePage": false,
     "autocompConstraint": "collId=1068",
     "sortDesc": false,
+    "homePage": false,
     "all": "",
     "page": 1
   },
@@ -99,7 +93,7 @@
         "name": "December"
       }
     ],
-    "q": "http://www.mahteso.org/"
+    "q": "mwatikho"
   },
   "sortFields": [
     "score.desc",
@@ -109,6 +103,9 @@
     "f_url.desc"
   ],
   "results": {
+    "waybackUrl": "https://wayback.archive-it.org",
+    "totalResultCount": 1,
+    "waybackAccessPoint": "1068",
     "breadcrumbs": [
       {
         "name": "Explore",
@@ -123,11 +120,9 @@
         "path": "/collections/1068"
       }
     ],
-    "rootUrl": "http://www.mahteso.org/",
-    "waybackAccessPoint": "1068",
     "rootEntity": {
-      "entityDef": "Collection",
-      "organizationName": "Columbia University Libraries",
+      "featuredTitle": "Columbia University Human Rights Web Archive",
+      "featuredDescription": "This collection is dedicated to preserving web-based information of importance to the global community of human rights researchers, students, policymakers and advocates.",
       "metadata": {
         "meta_oai_Subject": [
           "Human rights",
@@ -157,21 +152,21 @@
           "Columbia University Libraries, Center for Human Rights Documentation and Research"
         ]
       },
+      "entityDef": "Collection",
+      "organizationName": "Columbia University Libraries",
       "featuredLink": "https://archive-it.org/public/collection.html?id=1068",
-      "featuredDescription": "This collection is dedicated to preserving web-based information of importance to the global community of human rights researchers, students, policymakers and advocates.",
-      "featuredTitle": "Columbia University Human Rights Web Archive",
       "collectionId": 1068,
       "entityPath": "/collections/1068",
       "organizationId": 304,
       "uid": "C-1068",
-      "organizationPath": "/organizations/304",
-      "typeKey": "collection",
-      "imageEntity": "featured",
       "descriptions": [
         "An initiative of CUL's Center for Human Rights Documentation and Research, the Human Rights Web Archive is an effort to preserve and ensure access to freely available human rights resources created mainly by non-governmental organizations, national human rights institutions, and individuals."
       ],
       "created_dt": 1210875015000,
       "collectionPath": "/collections/1068",
+      "organizationPath": "/organizations/304",
+      "typeKey": "collection",
+      "imageEntity": "featured",
       "description": "An initiative of CUL's Center for Human Rights Documentation and Research, the Human Rights Web Archive is an effort to preserve and ensure access to freely available human rights resources created mainly by non-governmental organizations, national human rights institutions, and individuals.",
       "name": "Human Rights",
       "id": 1068
@@ -180,125 +175,115 @@
       "active": true,
       "numResults": 1,
       "entityDef": "CuratedPage",
-      "url": "?q=http%3A%2F%2Fwww.mahteso.org%2F&fc=seedId%3A1159185&show=Sites",
+      "url": "?q=mwatikho&show=Sites",
       "name": "Sites",
       "type": "Sites"
     },
-    "waybackUrl": "https://wayback.archive-it.org",
-    "totalResultCount": 1,
     "searchedFacets": [
       {
+        "hasMore": false,
+        "toggleAlphaURL": "?q=mwatikho&falpha=f_websiteGroup%3Afalse",
         "numResults": 1,
         "results": [
           {
-            "constrained": false,
-            "addFacetURL": "?q=http%3A%2F%2Fwww.mahteso.org%2F&fc=seedId%3A1159185&fc=websiteGroup%3ANon-governmental+organizations",
             "count": 1,
+            "constrained": false,
+            "addFacetURL": "?q=mwatikho&fc=websiteGroup%3ANon-governmental+organizations",
             "name": "Non-governmental organizations"
           }
         ],
-        "toggleAlphaURL": "?q=http%3A%2F%2Fwww.mahteso.org%2F&fc=seedId%3A1159185&falpha=f_websiteGroup%3Afalse",
-        "hasMore": false,
         "alpha": true,
         "id": "websiteGroup"
       },
       {
+        "hasMore": false,
+        "toggleAlphaURL": "?q=mwatikho&falpha=f_meta_Subject%3Atrue",
         "numResults": 2,
         "results": [
           {
-            "constrained": false,
-            "addFacetURL": "?q=http%3A%2F%2Fwww.mahteso.org%2F&fc=seedId%3A1159185&fc=meta_Subject%3AHuman+rights",
             "count": 1,
+            "constrained": false,
+            "addFacetURL": "?q=mwatikho&fc=meta_Subject%3AHuman+rights",
             "name": "Human rights"
           },
           {
-            "constrained": false,
-            "addFacetURL": "?q=http%3A%2F%2Fwww.mahteso.org%2F&fc=seedId%3A1159185&fc=meta_Subject%3ATorture+victims",
             "count": 1,
+            "constrained": false,
+            "addFacetURL": "?q=mwatikho&fc=meta_Subject%3ATorture+victims",
             "name": "Torture victims"
           }
         ],
-        "toggleAlphaURL": "?q=http%3A%2F%2Fwww.mahteso.org%2F&fc=seedId%3A1159185&falpha=f_meta_Subject%3Atrue",
-        "hasMore": false,
         "alpha": false,
         "id": "meta_Subject"
       },
       {
+        "hasMore": false,
+        "toggleAlphaURL": "?q=mwatikho&falpha=f_meta_Creator%3Atrue",
         "numResults": 1,
         "results": [
           {
-            "constrained": false,
-            "addFacetURL": "?q=http%3A%2F%2Fwww.mahteso.org%2F&fc=seedId%3A1159185&fc=meta_Creator%3AMwatikho+Torture+Survivors+Organization",
             "count": 1,
+            "constrained": false,
+            "addFacetURL": "?q=mwatikho&fc=meta_Creator%3AMwatikho+Torture+Survivors+Organization",
             "name": "Mwatikho Torture Survivors Organization"
           }
         ],
-        "toggleAlphaURL": "?q=http%3A%2F%2Fwww.mahteso.org%2F&fc=seedId%3A1159185&falpha=f_meta_Creator%3Atrue",
-        "hasMore": false,
         "alpha": false,
         "id": "meta_Creator"
       },
       {
+        "hasMore": false,
+        "toggleAlphaURL": "?q=mwatikho&falpha=f_meta_Language%3Atrue",
         "numResults": 1,
         "results": [
           {
-            "constrained": false,
-            "addFacetURL": "?q=http%3A%2F%2Fwww.mahteso.org%2F&fc=seedId%3A1159185&fc=meta_Language%3AEnglish",
             "count": 1,
+            "constrained": false,
+            "addFacetURL": "?q=mwatikho&fc=meta_Language%3AEnglish",
             "name": "English"
           }
         ],
-        "toggleAlphaURL": "?q=http%3A%2F%2Fwww.mahteso.org%2F&fc=seedId%3A1159185&falpha=f_meta_Language%3Atrue",
-        "hasMore": false,
         "alpha": false,
         "id": "meta_Language"
       },
       {
+        "hasMore": false,
+        "toggleAlphaURL": "?q=mwatikho&falpha=f_meta_Coverage%3Atrue",
         "numResults": 1,
         "results": [
           {
-            "constrained": false,
-            "addFacetURL": "?q=http%3A%2F%2Fwww.mahteso.org%2F&fc=seedId%3A1159185&fc=meta_Coverage%3AKenya",
             "count": 1,
+            "constrained": false,
+            "addFacetURL": "?q=mwatikho&fc=meta_Coverage%3AKenya",
             "name": "Kenya"
           }
         ],
-        "toggleAlphaURL": "?q=http%3A%2F%2Fwww.mahteso.org%2F&fc=seedId%3A1159185&falpha=f_meta_Coverage%3Atrue",
-        "hasMore": false,
         "alpha": false,
         "id": "meta_Coverage"
       },
       {
+        "hasMore": false,
+        "toggleAlphaURL": "?q=mwatikho&falpha=f_meta_Collector%3Atrue",
         "numResults": 1,
         "results": [
           {
-            "constrained": false,
-            "addFacetURL": "?q=http%3A%2F%2Fwww.mahteso.org%2F&fc=seedId%3A1159185&fc=meta_Collector%3AColumbia+University+Libraries%2C+Center+for+Human+Rights+Documentation+and+Research",
             "count": 1,
+            "constrained": false,
+            "addFacetURL": "?q=mwatikho&fc=meta_Collector%3AColumbia+University+Libraries%2C+Center+for+Human+Rights+Documentation+and+Research",
             "name": "Columbia University Libraries, Center for Human Rights Documentation and Research"
           }
         ],
-        "toggleAlphaURL": "?q=http%3A%2F%2Fwww.mahteso.org%2F&fc=seedId%3A1159185&falpha=f_meta_Collector%3Atrue",
-        "hasMore": false,
         "alpha": false,
         "id": "meta_Collector"
       }
     ],
-    "constrainedFacets": [],
-    "errorStatus": "",
-    "success": true,
-    "displayed": 1,
-    "numPages": 1,
-    "rootEntityType": "collection",
-    "pagingBaseUrl": "?q=http%3A%2F%2Fwww.mahteso.org%2F&fc=seedId%3A1159185",
-    "sortingBaseUrl": "?q=http%3A%2F%2Fwww.mahteso.org%2F&fc=seedId%3A1159185&totalResultCount=1",
-    "resultsUrl": "?q=http%3A%2F%2Fwww.mahteso.org%2F&fc=seedId%3A1159185",
+    "sortingBaseUrl": "?q=mwatikho&totalResultCount=1",
     "tabs": [
       {
         "active": true,
         "numResults": 1,
         "entityDef": "CuratedPage",
-        "url": "?q=http%3A%2F%2Fwww.mahteso.org%2F&fc=seedId%3A1159185&show=Sites",
+        "url": "?q=mwatikho&show=Sites",
         "name": "Sites",
         "type": "Sites"
       },
@@ -306,16 +291,27 @@
         "active": false,
         "numResults": 0,
         "entityDef": "ArchivedPage",
-        "url": "?q=http%3A%2F%2Fwww.mahteso.org%2F&fc=seedId%3A1159185&show=ArchivedPages",
+        "url": "?q=mwatikho&show=ArchivedPages",
         "name": "ArchivedPages",
         "type": "ArchivedPages"
       }
     ],
+    "errorStatus": "",
+    "success": true,
+    "displayed": 1,
+    "numPages": 1,
+    "rootEntityType": "collection",
+    "pagingBaseUrl": "?q=mwatikho",
+    "resultsUrl": "?q=mwatikho",
+    "constrainedFacets": [],
+    "sort": "score.desc",
     "entities": [
       {
-        "websiteGroup": "Non-governmental organizations",
-        "entityDef": "CuratedPage",
-        "organizationName": "Columbia University Libraries",
+        "isSeed": true,
+        "numVideos": 3,
+        "seedVideosUrl": "?q=http%3A%2F%2Fwww.mahteso.org%2F&show=SeedVideos&fc=seedId%3A1159185",
+        "collectionName": "Human Rights",
+        "allURL": "https://wayback.archive-it.org/1068/*/http://www.mahteso.org/",
         "metadata": {
           "meta_Language": [
             "English"
@@ -325,11 +321,11 @@
             "Human rights"
           ],
           "meta_Title": [
-            "Mwatikho Torture Survivors Organization",
+            "Mwatikho $high%Torture/$light% Survivors Organization",
             "MATESO"
           ],
           "meta_Creator": [
-            "Mwatikho Torture Survivors Organization"
+            "$high%Mwatikho/$light% Torture Survivors Organization"
           ],
           "meta_Collector": [
             "Columbia University Libraries, Center for Human Rights Documentation and Research"
@@ -338,48 +334,43 @@
             "Kenya"
           ],
           "meta_Description": [
-            "Mwatikho is a community based human rights organization of torture survivors and their families. It advocates: the elimination of torture; the identification and recruiting of other torture survivors; networking with other organizations against torture; rehabilitation of the survivors through counseling ; advocacy for reparation and economic emancipation of the survivors; and monitoring and documentation of torture. It was established in 1992 as a membership and transformed to a human rights lobbying group."
+            "$high%Mwatikho/$light% is a community based human rights organization of torture survivors and their families. It advocates: the elimination of torture; the identification and recruiting of other torture survivors; networking with other organizations against torture; rehabilitation of the survivors through counseling ; advocacy for reparation and economic emancipation of the survivors; and monitoring and documentation of torture. It was established in 1992 as a membership and transformed to a human rights lobbying group."
           ]
         },
-        "numCaptures": 0,
+        "entityDef": "CuratedPage",
+        "organizationName": "Columbia University Libraries",
+        "websiteGroup": "Non-governmental organizations",
         "canonicalUrl": "http://www.mahteso.org/",
-        "allURL": "https://wayback.archive-it.org/1068/*/http://www.mahteso.org/",
-        "numVideos": 3,
-        "seedVideosUrl": "?q=http%3A%2F%2Fwww.mahteso.org%2F&show=SeedVideos&fc=seedId%3A1159185",
-        "collectionName": "Human Rights",
-        "isSeed": true,
+        "numCaptures": 0,
+        "waybackCalendar": "https://wayback.archive-it.org/1068/*/http://www.mahteso.org/",
         "waybackAccessPoint": "1068",
         "firstCapture": {
-          "waybackUrl": "https://wayback.archive-it.org/1068/19000101000000/http://www.mahteso.org/",
           "formattedDate": "Jan 01, 1900",
+          "waybackUrl": "https://wayback.archive-it.org/1068/19000101000000/http://www.mahteso.org/",
           "date": -2208988800000
         },
         "lastCapture": {
-          "waybackUrl": "https://wayback.archive-it.org/1068/19000101000000/http://www.mahteso.org/",
           "formattedDate": "Jan 01, 1900",
+          "waybackUrl": "https://wayback.archive-it.org/1068/19000101000000/http://www.mahteso.org/",
           "date": -2208988800000
         },
-        "waybackCalendar": "https://wayback.archive-it.org/1068/*/http://www.mahteso.org/",
         "collectionId": 1068,
         "entityPath": "/curated/1159185",
         "organizationId": 304,
-        "url": "http://www.mahteso.org/",
         "uid": "S-1159185",
-        "organizationPath": "/organizations/304",
-        "hilitedUrl": "<em>http://www.mahteso.org</em>/",
-        "typeKey": "curatedpage",
         "descriptions": [
-          "Mwatikho is a community based human rights organization of torture survivors and their families. It advocates: the elimination of torture; the identification and recruiting of other torture survivors; networking with other organizations against torture; rehabilitation of the survivors through counseling ; advocacy for reparation and economic emancipation of the survivors; and monitoring and documentation of torture. It was established in 1992 as a membership and transformed to a human rights lobbying group."
+          "$high%Mwatikho/$light% is a community based human rights organization of torture survivors and their families. It advocates: the elimination of torture; the identification and recruiting of other torture survivors; networking with other organizations against torture; rehabilitation of the survivors through counseling ; advocacy for reparation and economic emancipation of the survivors; and monitoring and documentation of torture. It was established in 1992 as a membership and transformed to a human rights lobbying group."
         ],
         "created_dt": 1474658675000,
         "collectionPath": "/collections/1068",
-        "description": "Mwatikho is a community based human rights organization of torture survivors and their families. It advocates: the elimination of torture; the identification and recruiting of other torture survivors; networking with other organizations against torture; rehabilitation of the survivors through counseling ; advocacy for reparation and economic emancipation of the survivors; and monitoring and documentation of torture. It was established in 1992 as a membership and transformed to a human rights lobbying group.",
-        "name": "Mwatikho Torture Survivors Organization",
+        "organizationPath": "/organizations/304",
+        "url": "http://www.mahteso.org/",
+        "hilitedUrl": "http://www.mahteso.org/",
+        "typeKey": "curatedpage",
+        "description": "$high%Mwatikho/$light% is a community based human rights organization of torture survivors and their families. It advocates: the elimination of torture; the identification and recruiting of other torture survivors; networking with other organizations against torture; rehabilitation of the survivors through counseling ; advocacy for reparation and economic emancipation of the survivors; and monitoring and documentation of torture. It was established in 1992 as a membership and transformed to a human rights lobbying group.",
+        "name": "$high%Mwatikho/$light% Torture Survivors Organization",
         "id": 1159185
       }
-    ],
-    "sort": "score.desc"
-  },
-  "waybackCalendarUrl": "https://wayback.archive-it.org/1068/*/http://www.mahteso.org/",
-  "numCaptures": 17
+    ]
+  }
 }

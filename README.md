@@ -1,43 +1,26 @@
-# BlacklightInternetArchive
+== README
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/blacklight_internet_archive`. To experiment with that code, run `bin/console` for an interactive prompt.
+A blacklight front-end for Internet Archive collections
 
-TODO: Delete this and the text above, and describe your gem
+In CatalogController, set 
 
-## Installation
+    config.repository_class = InternetArchive::Repository
+    config.response_model = InternetArchive::BlacklightResponse
 
-Add this line to your application's Gemfile:
+For index search results metadata display, include the following:
 
-```ruby
-gem 'blacklight_internet_archive'
-```
 
-And then execute:
+    config.add_index_field 'meta_Title', label: 'Title'
+    config.add_index_field 'linked_url', label: 'URL'
+    config.add_index_field 'description', label: 'Description'
+    config.add_index_field 'linked_numCaptures', label: '# of Captures'
+    config.add_index_field 'linked_firstCapture_date', label: 'First Captured'
+    config.add_index_field 'linked_lastCapture_date', label: 'Last Captured'    
+    config.add_index_field 'linked_numVideos', label: 'Videos'
+    config.add_index_field 'meta_Subject', label: 'Subject'
+    config.add_index_field 'websiteGroup', label: 'Group'
+    config.add_index_field 'meta_Creator', label: 'Creator'
+    config.add_index_field 'meta_Language', label: 'Language'
+    config.add_index_field 'meta_Coverage', label: 'Coverage'
+    config.add_index_field 'meta_Collector', label: 'Collector'
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install blacklight_internet_archive
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/blacklight_internet_archive. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the BlacklightInternetArchive project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/blacklight_internet_archive/blob/master/CODE_OF_CONDUCT.md).
